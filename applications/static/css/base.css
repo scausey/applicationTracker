@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: white;
+}
+
+
+/* header styles */
+.header {
+  background-color: #242f44;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.header h1 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.header h1 a {
+  color: white;
+}
+
+/* Content */
+.content {
+  max-width: 1240px;
+  min-width: 500px;
+  margin: 0 auto;
+}
+
+/* Main table and button */
+table {
+  margin-top: 20px;
+}
+
+.add-btn {
+  background-color: #e5dfd1;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  text-decoration: none;
+  color: #6176a5;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.add-btn:hover {
+  background-color: #d0c5ac;
+  text-decoration: none;
+}
+
+table {
+  border: 1px solid #e5dfd1;
+}
+
+/* Footer code */
+footer {
+  background-color: #242f44;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  bottom: 0px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 80px;
+  align-items: center;
+  font-size: 10px;
+}
+
+footer p, footer a {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* application_details css */
+.job-app {
+  text-align: center;
+}

@@ -1,52 +1,27 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <title>Job Application Tracker</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link rel="stylesheet" href="{% static 'css/applications.css' %}" />
-    </head>
-    <body>
-      <div class="header">
-        <h1>Job Application Tracker</h1>
-        <p>
-          <a href=#>Active</a> -
-          <a href=#>Rejected</a> -
-          <a href=#>East Coast</a> -
-          <a href=#>Southern USA</a> -
-          <a href=#>Abroad</a>
-        </p>
-      </div>
-      <div class="content">
-        <div class="row">
-          <div class="side-nav col-md-3">
-            <a class="add-btn" href=#>+ Add an application</a>
-          </div>
-          <div class="col-md-9 applications">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Company</th>
-                  <th>Position</th>
-                  <th>Location</th>
-                  <th>Date Applied</th>
-                  <th>Application Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for application in applications %}
-                <tr>
-                  <td>{{ application.company }}</td>
-                  <td>{{ application.position }}</td>
-                  <td>{{ application.location }}</td>
-                  <td>{{ application.date_applied }}</td>
-                  <td>{{ application.status }}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </body>
-</html>
+{% extends 'applications/base.html' %}
+{% block content %}
+  <!--Not completely sure where to put the button.-->
+  <a class="add-btn" href=#>+ Add an application</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Position</th>
+        <th>Location</th>
+        <th>Date Applied</th>
+        <th>Application Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for application in applications %}
+        <tr>
+          <td>{{ application.company }}</td>
+          <td><a href="{% url 'application_detail' pk=application.pk %}">{{ application.position }}</a></td>
+          <td>{{ application.location }}</td>
+          <td>{{ application.date_applied }}</td>
+          <td>{{ application.status }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

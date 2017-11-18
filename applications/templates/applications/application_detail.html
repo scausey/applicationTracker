@@ -1,0 +1,11 @@
+{% extends 'applications/base.html' %}
+
+{% block content %}
+  <div class="job-app">
+    <h1>{{ application.position }}</h1>
+    <p>@{{ application.company }} in {{ application.location }}</p>
+    <p>{{ application.date_applied }}</p>
+    <p>{{ application.status }}</p>
+    <p>{{ application.notes }}</p>
+  </div>
+{% endblock %}

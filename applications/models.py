@@ -5,6 +5,7 @@ from django.db import models
 class Application(models.Model):
     """Representation of a single job application."""
     company = models.CharField(max_length=200)
+    #TODO: Add a url feild linking to the job description.
     position = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
     date_applied = models.DateField(default=datetime.date.today)
