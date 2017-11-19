@@ -1,0 +1,9 @@
+{% extends 'applications/base.html' %}
+
+{% block content %}
+<h1>Add a New Application</h1>
+<form method="POST" class="add-app-form">{% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="save btn btn-default">Save</button>
+</form>
+{% endblock %}

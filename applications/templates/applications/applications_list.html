@@ -1,7 +1,8 @@
 {% extends 'applications/base.html' %}
 {% block content %}
   <!--Not completely sure where to put the button.-->
-  <a class="add-btn" href=#>+ Add an application</a>
+  <!--<span class="glyphicon glyphicon-plus"></span> -->
+  <a class="add-btn" href="{% url 'add_application' %}">+ Add an application</a>
   <table class="table">
     <thead>
       <tr>
