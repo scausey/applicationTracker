@@ -28,3 +28,15 @@ def add_application(request):
     else:
         form = AddApplicationForm()
     return render(request, 'applications/add_application.html', {'form': form})
+
+def application_edit(request, pk):
+    post = get_object_or_404(Application, pk=pk)
+    if request.method == "POST":
+        form = AddApplicationForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('application_detail', pk=post.pk)
+    else:
+        form = AddApplicationForm(instance=post)
+    return render(request, 'applications/add_application.html', {'form': form})
